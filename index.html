@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Forms - Single page workflow</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='app.js'></script>
-</head>
-<body>
-    
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>Form Element - Single page workflow</h1>
+    <!--action attribute - location to send data-->
+    <!--method attribute default - get -send data as URLVariables-->
+    <form action="/location" method="get">
+      <input type="text" name="username" id="username" placeholder="username"/>
+      <input type="text" name="tweet" id="tweet" placeholder="tweet" />
+      <button>Post Tweet</button>
+    </form>
+  </body>
 </html>

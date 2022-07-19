@@ -36,6 +36,19 @@ tweetForm.addEventListener("submit", function (e) {
   //becomes - inputObject.property - returns string
   const usernameString = this.elements.username.value;
   const tweetString = this.elements.tweet.value;
+  //execute variable function //pass in arguments -usernameString,tweetString
+  addTweet(usernameString, tweetString);
+
+  //clear value property
+  this.elements.username.value = "";
+  this.elements.tweet.value = "";
+});
+
+//Anonymouse arrow function expression stored in variable
+//creation code seperation into new function expression
+//accepts 2 parameters -usernameString,tweetString
+const addTweet = (usernameString, tweetString) => {
+  //this keyword - created function scope- current left of dot - WindowObject
 
   //expected nesting -<ul><li><b>stringObject</b>stringObject</li></ul>
   //select parent ul elementObject
@@ -63,8 +76,4 @@ tweetForm.addEventListener("submit", function (e) {
   newTweet.append(` - ${tweetString}`);
   //append child elementObject to parent elementObject
   ul.append(newTweet);
-
-  //clear value property
-  this.elements.username.value = "";
-  this.elements.tweet.value = "";
-});
+};

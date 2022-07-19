@@ -6,16 +6,19 @@
     <title>Forms - Single page workflow</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="app.js"></script>
   </head>
   <body>
     <h1>Form Element - Single page workflow</h1>
     <!--action attribute - location to send data-->
     <!--method attribute default - get -send data as URLVariables-->
-    <form action="/location" method="get">
-      <input type="text" name="username" id="username" placeholder="username"/>
+    <form action="/location" method="get" id="tweetForm">
+      <input type="text" name="username" id="username" placeholder="username" />
       <input type="text" name="tweet" id="tweet" placeholder="tweet" />
       <button>Post Tweet</button>
     </form>
+    <h2>Tweets</h2>
+    <!--parent ul element - javacript will append the li-->
+    <ul id="tweetsUl"></ul>
+    <script src="app.js"></script>
   </body>
 </html>

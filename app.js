@@ -34,6 +34,37 @@ tweetForm.addEventListener("submit", function (e) {
   //becomes - HTMLFormContorlsCollectionObject.property
   //property is the value of name attribute of element
   //becomes - inputObject.property - returns string
-  const username = this.elements.username.value;
-  const tweet = this.elements.tweet.value;
+  const usernameString = this.elements.username.value;
+  const tweetString = this.elements.tweet.value;
+
+  //expected nesting -<ul><li><b>stringObject</b>stringObject</li></ul>
+  //select parent ul elementObject
+  const ul = document.querySelector("#tweetsUl");
+  //create new child elementObject - li,b
+  const newTweet = document.createElement("li");
+  const bTag = document.createElement("b");
+
+  //elementObject.method() -append() - added inside parent elementObject
+  //append DOMStringObject to parent elementObject
+  bTag.append(usernameString);
+  //alternative -
+  // bTag.innerText = usernameString
+  //sets properties innerText/innerHTML/textContent/lastChild
+
+  //append child elementObject to parent elementObject
+  //child is added to -
+  //parentElementObject.property
+  //property -children -HTMLCollectionObjact
+  //property -childNodes -NodeListObject
+  //property -lastchild
+  newTweet.append(bTag);
+
+  //append DOMStringObject to parent elementObject
+  newTweet.append(` - ${tweetString}`);
+  //append child elementObject to parent elementObject
+  ul.append(newTweet);
+
+  //clear value property
+  this.elements.username.value = "";
+  this.elements.tweet.value = "";
 });

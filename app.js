@@ -36,7 +36,7 @@ tweetForm.addEventListener("submit", function (e) {
   //becomes - inputObject.property - returns string
   const usernameString = this.elements.username.value;
   const tweetString = this.elements.tweet.value;
-  //execute variable function //pass in arguments -usernameString,tweetString
+  //execute variable function expression //pass in arguments -usernameString,tweetString
   addTweet(usernameString, tweetString);
 
   //clear value property

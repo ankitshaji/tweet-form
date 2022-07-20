@@ -2,6 +2,8 @@
 
 //elementObject = (JSObject/elementObject/nodeObject).method(css element selector)
 const tweetForm = document.querySelector("body #tweetForm");
+//select parent ul elementObject
+const ul = document.querySelector("#tweetsUl");
 
 //elementObject.method(eventString,anonymousCallbackFunctionExpression(eventObject))
 //eventString -"submit"
@@ -51,8 +53,6 @@ const addTweet = (usernameString, tweetString) => {
   //this keyword - created function scope- current left of dot - WindowObject
 
   //expected nesting -<ul><li><b>stringObject</b>stringObject</li></ul>
-  //select parent ul elementObject
-  const ul = document.querySelector("#tweetsUl");
   //create new child elementObject - li,b
   const newTweet = document.createElement("li");
   const bTag = document.createElement("b");
@@ -77,3 +77,18 @@ const addTweet = (usernameString, tweetString) => {
   //append child elementObject to parent elementObject
   ul.append(newTweet);
 };
+
+//instead of individual eventListeners on liElementObjects
+//Event Delegation sets addEventListner on parentElementObject
+//listen to click stringEvent in ulElementObject
+ul.addEventListener("click", function (e) {
+  //eventObject.property
+  //e.target gives elementObject which elementStringOccurs on(Target)
+  //even though our eventListner is on ULParentElementObject
+  //the target that has eventString happen on can be the liElementObject
+
+  //targetObject.method() - remove liElementObjecrts from ulElementObject
+  //verfiy target is liElementObject
+  //&& shorthand if true
+  e.target.nodeName === "LI" && e.target.remove();
+});
